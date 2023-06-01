@@ -1,5 +1,8 @@
 package Init;
 
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -32,7 +35,7 @@ public class Main {
 	    
 	    @Override
 	    public void run() {
-	        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+	        
 	        /*método que ejecuta acciones en la ventana de menú del jugador, de acuerdo
 	        a los datos que se reciben de los botones que se presionan desde el tapete*/
 	        String [] datosArd;
@@ -60,7 +63,7 @@ public class Main {
 	            try {
 	                Thread.sleep(100);
 	            } catch (InterruptedException ex) {
-	                Logger.getLogger(VentanaJuego.class.getName()).log(Level.SEVERE, null, ex);
+	                Logger.getLogger(InterInit.class.getName()).log(Level.SEVERE, null, ex);
 	            }
 	        }
 	    }
