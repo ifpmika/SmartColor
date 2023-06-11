@@ -5,55 +5,53 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.BorderLayout;
 import javax.swing.JLabel;
-import javax.swing.SwingConstants;
-import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class InterInit extends JFrame {
 
+	private static final long serialVersionUID = 4301607527149527509L;
+
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					InterInit frame = new InterInit();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
+	final MainMenu venata1 = new MainMenu();
+	
 	public InterInit() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(73, 73, 73));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lbTitulo = new JLabel("SMART-COLOR");
-		lbTitulo.setBounds(0, 11, 424, 29);
-		lbTitulo.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		lbTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-		contentPane.add(lbTitulo);
+		JLabel lbTituloPrincipal = new JLabel("Smart-Color");
+		lbTituloPrincipal.setFont(new Font("Broadway", Font.BOLD, 28));
+		lbTituloPrincipal.setForeground(new Color(255, 255, 255));
+		lbTituloPrincipal.setBounds(111, 32, 241, 56);
+		contentPane.add(lbTituloPrincipal);
 		
-		JButton btEmpezar = new JButton("EMPEZAR");
-		btEmpezar.setBounds(129, 112, 186, 61);
-		btEmpezar.setBackground(new Color(255, 128, 128));
+		JButton btEmpezar = new JButton("Empezar");
+		btEmpezar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				venata1.setVisible(true);
+				dispose();
+				
+			}
+		});
+		btEmpezar.setBounds(111, 146, 228, 43);
 		contentPane.add(btEmpezar);
+		
+		JLabel lbSubTitulo = new JLabel("Pulsa aquí:");
+		lbSubTitulo.setForeground(new Color(255, 255, 255));
+		lbSubTitulo.setBounds(111, 129, 67, 14);
+		contentPane.add(lbSubTitulo);
 	}
 
 }
